@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:fragment="head">
+<head th:~fragment="head">
     <meta charset="UTF-8"/>
     <title>Coding Events</title>
 
@@ -9,21 +9,14 @@
 
 </head>
 <body>
-<nav th:fragment="header" class="text-center">
-    <h1>Coding Events</h1>
-    <ul class="nav d-flex justify-content-center">
+<nav th:fragment="header">
+    <h1 th:text="${title}">Coding Events</h1>
+    <ul class="nav">
         <li class="nav-item"><a class="nav-link" href="/events">All Events</a></li>
         <li class="nav-item"><a class="nav-link" href="/events/create">Create Event</a></li>
     </ul>
 </nav>
-<table>
-    <tr>
-        <td th:fragment="address">123 Launch Pad Cirlce, Philadelphia, PA 55555</td>
-    </tr>
-    <tr>
-        <td th:fragment="staticImage"><img src="https://img.freepik.com/free-photo/people-business-meeting-high-angle_23-2148911819.jpg?q=10&h=200" alt="generic image of people meeting"></td>
-    </tr>
-</table>
+
 
 </body>
 </html>
