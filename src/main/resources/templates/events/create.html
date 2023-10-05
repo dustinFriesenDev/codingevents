@@ -5,14 +5,50 @@
 
 <header th:replace="~{fragments :: header}"></header>
 
+<p th:text="${errorMsg}" style="color:red;"></p>
 <form method="post">
     <div class="form-group">
         <label>Name
-            <input type="text" name="eventName" class="form-control">
+<!-- name attribute have to match the names of the Model/Constructor to allow Model Binding to work. -->
+            <input th:field="${event.name}" class="form-control">
         </label>
+        <p class="errors" th:errors="${event.name}"></p>
+    </div>
+    <div class="form-group">
         <label>Description
-            <input type="text" name="eventDescription" class="form-control">
+            <input th:field="${event.description}" class="form-control">
         </label>
+        <p class="errors" th:errors="${event.description}"></p>
+    </div>
+    <div class="form-group">
+        <label>Contact Email
+            <input th:field="${event.contactEmail}" class="form-control">
+        </label>
+        <p class="errors" th:errors="${event.contactEmail}"></p>
+    </div>
+    <div class="form-group">
+        <label>Location
+            <input th:field="${event.location}" class="form-control">
+        </label>
+        <p class="errors" th:errors="${event.location}"></p>
+    </div>
+    <div class="form-check">
+        <label>Registration Required
+            <input type="checkbox" th:field="${event.requiredRegistration}" th:value="yes" class="form-check-input">
+        </label>
+        <p class="errors" th:errors="${event.requiredRegistration}"></p>
+    </div>
+    <div class="form-group">
+        <label>Number of Attendees
+            <input type="number" th:field="${event.numberOfAttendees}" class="form-control">
+        </label>
+        <p class="errors" th:errors="${event.numberOfAttendees}"></p>
+    </div>
+    <div class="form-group">
+        <label>Date
+            <input type="date" th:field="${event.startDate}" class="form-control">
+        </label>
+        <p class="errors" th:errors="${event.startDate}"></p>
     </div>
     <div class="form-group">
         <input type="submit" value="Create" class="btn btn-success">

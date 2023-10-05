@@ -1,4 +1,8 @@
-body {
-font-size: 20px;
-color: purple;
+
+.form-group {
+    margin-top: 20px;
+}
+
+.errors {
+    color: red;
 }
