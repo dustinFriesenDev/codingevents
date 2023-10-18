@@ -40,7 +40,9 @@ public class Event {
     @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDate startDate;
 
-    public Event(String name, String description, String contactEmail, String location, String requiredRegistration, int numberOfAttendees, LocalDate startDate) {
+    private EventType type;
+
+    public Event(String name, String description, String contactEmail, String location, String requiredRegistration, int numberOfAttendees, LocalDate startDate, EventType type) {
         this();
         this.name = name;
         this.description = description;
@@ -49,6 +51,7 @@ public class Event {
         this.requiredRegistration = requiredRegistration;
         this.numberOfAttendees = numberOfAttendees;
         this.startDate = startDate;
+        this.type = type;
 
     }
 
@@ -115,6 +118,14 @@ public class Event {
 
     public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
+    }
+
+    public EventType getType() {
+        return type;
+    }
+
+    public void setType(EventType type) {
+        this.type = type;
     }
 
     @Override

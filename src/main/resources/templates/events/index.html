@@ -17,6 +17,7 @@
             <th>Registration Required</th>
             <th>Number of Attendees</th>
             <th>Date</th>
+            <th>Type</th>
         </tr>
     </thead>
     <tr th:each="event : ${events}">
@@ -31,6 +32,7 @@
         <td th:text="${event.requiredRegistration}"></td>
         <td th:text="${event.numberOfAttendees}"></td>
         <td th:text="${event.startDate}"></td>
+        <td th:text="${event.type.displayName}"></td>
     </tr>
 </table>
 </body>
