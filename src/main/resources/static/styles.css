@@ -3,5 +3,9 @@ body {
 }
 
 .error {
-  color: red;
+   color: red;
+}
+
+.btn {
+  margin-top: 10px;
 }
