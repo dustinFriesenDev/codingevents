@@ -19,7 +19,7 @@ public class Tag extends AbstractEntity {
     private String name;
 
     @ManyToMany(mappedBy = "tags")
-    private List<Event> events = new ArrayList<>();
+    private final List<Event> events = new ArrayList<>();
 
     public Tag(String name) {
         this.name = name;
@@ -41,5 +41,6 @@ public class Tag extends AbstractEntity {
 
     public List<Event> getEvents() {
         return events;
+
     }
 }
