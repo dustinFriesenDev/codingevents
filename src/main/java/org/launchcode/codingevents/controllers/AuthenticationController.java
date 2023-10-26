@@ -24,7 +24,7 @@ public class AuthenticationController {
 
     private static final String userSessionKey = "user";
 
-    public User getUserFormSession(HttpSession session){
+    public User getUserFromSession(HttpSession session){
         Integer userId = (Integer) session.getAttribute(userSessionKey);
         if(userId == null){
             return null;
@@ -44,7 +44,6 @@ public class AuthenticationController {
 
     @GetMapping("register")
     public String displayRegistrationForm(Model model){
-        model.addAttribute(new LoginFormDTO());
         model.addAttribute(new RegisterFormDTO());
         model.addAttribute("title", "Register");
         return "register";
