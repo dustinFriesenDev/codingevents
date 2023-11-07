@@ -24,6 +24,7 @@ public class AuthenticationController {
 
     private static final String userSessionKey = "user";
 
+//    this will get user information for the session
     public User getUserFromSession(HttpSession session){
         Integer userId = (Integer) session.getAttribute(userSessionKey);
         if(userId == null){
@@ -38,6 +39,7 @@ public class AuthenticationController {
 
         return user.get();
     }
+//    this creates the session
     private static void setUserInSession(HttpSession session, User user) {
         session.setAttribute(userSessionKey, user.getId());
     }
@@ -79,7 +81,7 @@ public class AuthenticationController {
         userRepository.save(newUser);
         setUserInSession(request.getSession(), newUser);
 
-        return "redirect:register";
+        return "redirect:";
     }
 
     @GetMapping("login")
